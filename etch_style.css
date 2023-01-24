@@ -15,7 +15,7 @@ body {
 .grid-box {
     flex: auto;
     box-sizing: border-box;
-    border: 2px solid black;
+    border: .05px solid black;
 }
 .grid-box:hover {
     background-color: black;
