@@ -1,7 +1,10 @@
-// get grid-container element and store in constant for use
+// get elements and store in constants for use
 const gridContainer = document.getElementById('grid-container');
+const etchBox = document.querySelector('.grid-box');
 
 let gridSize = 16;
+
+//listen for mouseover on grid-box class
 
 
 // set height and width of grid box depending on grid size
@@ -17,9 +20,12 @@ for (let i = 1; i <= gridSize; i++) {   //create row divs
     gridContainer.appendChild (row);
     for (let j = 1; j <= gridSize; j++) {      // create each grid-box in the row
         const column = document.createElement('div');
-        column.classList.add (`column${j}`, 'grid-box', `${i}-${j}`);
+        column.classList.add (`column${j}`, 'grid-box');
+        column.id = `${i}-${j}`;
         row.appendChild (column);
-
-
     }
+}
+
+function etch () {  //change background color of each grid-box on mouseenter
+    etchBox
 }

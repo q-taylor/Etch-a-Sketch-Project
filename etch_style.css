@@ -17,6 +17,9 @@ body {
     box-sizing: border-box;
     border: 2px solid black;
 }
+.grid-box:hover {
+    background-color: black;
+}
 .row {
     display: flex;
     flex-wrap: nowrap;
