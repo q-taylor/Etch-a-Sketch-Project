@@ -1,27 +1,27 @@
 // get elements and store in constants for use
 const gridContainer = document.getElementById('grid-container');
 
+let gridSize = prompt('What size grid would you like?');
 
-let gridSize = 16;
-
+drawGrid(gridSize);
 
 
 // set height and width of grid box depending on grid size
-//
-// loop that creates div grid
-//  create  div for each row up to the number of columns
-//  in each row div create square divs up to the number per row
 
-for (let i = 1; i <= gridSize; i++) {   //create row divs
-    const row = document.createElement('div');
-    row.classList.add (`row${i}`, 'row');
+// function that creates div grid
 
-    gridContainer.appendChild (row);
-    for (let j = 1; j <= gridSize; j++) {      // create each grid-box in the row
-        const column = document.createElement('div');
-        column.classList.add (`column${j}`, 'grid-box');
-        column.id = `${i}-${j}`;
-        row.appendChild (column);
+function drawGrid (gridSize) {
+    for (let i = 1; i <= gridSize; i++) {   //create row divs
+        const row = document.createElement('div');
+        row.classList.add (`row${i}`, 'row');
+
+        gridContainer.appendChild (row);
+        for (let j = 1; j <= gridSize; j++) {      // create each grid-box in the row
+            const column = document.createElement('div');
+            column.classList.add (`column${j}`, 'grid-box');
+            column.id = `${i}-${j}`;
+            row.appendChild (column);
+        }
     }
 }
 
@@ -30,10 +30,3 @@ gridContainer.addEventListener('mouseover', function(e) {
     const box = e.target;
     box.style.backgroundColor = 'black';
 });
-
-
-
-
-function etch (id) {  //change background color of each grid-box on mouseenter
-    
-}
