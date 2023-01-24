@@ -1,20 +1,26 @@
-#grid-container {
+body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#grid-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
     height: 960px;
     width: 960px;
     flex: auto;
 }
 .grid-box {
-    border: 5px solid black;
-
+    flex: auto;
+    box-sizing: border-box;
+    border: 2px solid black;
 }
 .row {
     display: flex;
-    justify-content: center;
-
+    flex-wrap: nowrap;
+    flex: auto;
 }
 
 #title {
