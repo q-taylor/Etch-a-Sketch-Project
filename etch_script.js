@@ -1,22 +1,27 @@
 // get elements and store in constants for use
 const gridContainer = document.getElementById('grid-container');
 const resetBtn = document.getElementById('reset-btn');
+const changeGrid = document.getElementById('change-grid');
 
 let gridSize = 25;
 
 drawGrid(gridSize);
 
 resetBtn.addEventListener('click', () => {
-    gridSize = prompt('What size grid would you like?');
     drawGrid(gridSize);
 });
+
+changeGrid.addEventListener('click', () => {
+    gridSize = prompt('What size grid would you like?');
+    drawGrid(gridSize);
+})
 
 // set height and width of grid box depending on grid size
 
 // function that creates div grid
 
 function drawGrid (gridSize) {
-    if (gridSize <= 100 && gridSize != null && gridSize != '') {
+    if (gridSize <= 100 && gridSize != null && gridSize != '' && gridSize > 0) {
         gridContainer.replaceChildren();
         for (let i = 1; i <= gridSize; i++) {   //create row divs
             const row = document.createElement('div');
@@ -30,8 +35,8 @@ function drawGrid (gridSize) {
                 row.appendChild (column);
             }
         }
-    } else if (gridSize > 100) {
-        gridSize = prompt('That was too big, 100 or under please. What size grid would you like?');
+    } else if (gridSize > 100 || gridSize < 1) {
+        gridSize = prompt('That wasn\'t a valid number, between 1-100 please. What size grid would you like?');
         drawGrid(gridSize);
     } else {
         gridSize = prompt('What grid size would you like this time?');

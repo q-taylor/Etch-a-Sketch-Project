@@ -15,11 +15,11 @@ body {
 .grid-box {
     flex: auto;
     box-sizing: border-box;
-    border: .01px solid black;
+    border: 1px dotted rgba(150, 150, 150, 0.5);
 }
 .grid-box:hover {
     opacity: 0.2;
-    background-color: green;
+    color: green;
 }
 .row {
     display: flex;
@@ -35,9 +35,13 @@ body {
 #reset-btn {
     background-color: transparent;
     border: none;
-    transition-duration: 1s;
+    transition-duration: 2s;
 }
 #reset-btn:hover {
     transform: rotate(360deg);
+}
+
+#change-grid {
+    margin: 2em;
 }
 
