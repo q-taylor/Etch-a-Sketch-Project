@@ -16,7 +16,7 @@ resetBtn.addEventListener('click', () => {
 // function that creates div grid
 
 function drawGrid (gridSize) {
-    if (gridSize <= 100) {
+    if (gridSize <= 100 && gridSize != null && gridSize != '') {
         gridContainer.replaceChildren();
         for (let i = 1; i <= gridSize; i++) {   //create row divs
             const row = document.createElement('div');
@@ -30,9 +30,13 @@ function drawGrid (gridSize) {
                 row.appendChild (column);
             }
         }
-    } else {
+    } else if (gridSize > 100) {
         gridSize = prompt('That was too big, 100 or under please. What size grid would you like?');
         drawGrid(gridSize);
+    } else {
+        gridSize = prompt('What grid size would you like this time?');
+        drawGrid(gridSize);
+        console.log(gridSize);
     }
 }
 
