@@ -1,10 +1,15 @@
 // get elements and store in constants for use
 const gridContainer = document.getElementById('grid-container');
+const resetBtn = document.getElementById('reset-btn');
 
-let gridSize = prompt('What size grid would you like?');
+let gridSize = 25;
 
 drawGrid(gridSize);
 
+resetBtn.addEventListener('click', () => {
+    gridSize = prompt('What size grid would you like?');
+    drawGrid(gridSize);
+});
 
 // set height and width of grid box depending on grid size
 
@@ -12,6 +17,7 @@ drawGrid(gridSize);
 
 function drawGrid (gridSize) {
     if (gridSize <= 100) {
+        gridContainer.replaceChildren();
         for (let i = 1; i <= gridSize; i++) {   //create row divs
             const row = document.createElement('div');
             row.classList.add (`row${i}`, 'row');
